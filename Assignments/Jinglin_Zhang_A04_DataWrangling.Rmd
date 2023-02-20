@@ -3,8 +3,8 @@ title: 'Assignment 4: Data Wrangling'
 author: "Jinglin Zhang"
 date: "Spring 2023"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
 geometry: margin=2.54cm
 editor_options:
   chunk_output_type: inline
