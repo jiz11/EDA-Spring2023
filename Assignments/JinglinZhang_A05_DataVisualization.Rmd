@@ -5,6 +5,8 @@ date: "Spring 2023"
 output:
   pdf_document: default
   word_document: default
+  html_document:
+    df_print: paged
 geometry: margin=2.54cm
 fig_height: 3
 fig_width: 4
@@ -32,7 +34,7 @@ This exercise accompanies the lessons in Environmental Data Analytics on Data Vi
 
 2. Make sure R is reading dates as date format; if not change the format to date.
 
-```{r initialize project}
+```{r initialize project, message=FALSE}
 #1 
 library(tidyverse)
 library(lubridate)
