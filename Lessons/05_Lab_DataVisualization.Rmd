@@ -46,7 +46,7 @@ ggplot(data=data.frame(x=0,y=0))+
   geom_text(
     x=0,
     y=0.025,
-    label=expression(paste("Mean is ", mu,",", R^{2},'=0.6'))
+    label=expression(paste("Mean is ", mu,",", R^{2},'=0.6')) #paste connect comma as spaces; paste0 output no spaces.
     )
 
 #Print the plot
@@ -99,11 +99,21 @@ Say we want to plot the number of records each month in the Peter/Paul lakes dat
 #Plot how many Lake observations occur each month
 
 #Convert month to a factor -- with 12 levels, labelled with month names
-
+factor(PeterPaul.chem.nutrients, levels = 1:12) # level fill missing month as factors
 #Try again: Plot how many Lake observations occur each month
-
+ggplot(PeterPaul.chem.nutrients, aes(x=factor(month))) + #factor() can make sure the x axes shows all the month, 
+  geom_bar()
 #Alter to include missing months
-
+ggplot(PeterPaul.chem.nutrients, 
+       aes(x=factor(month, 
+                    levels = 1:12, 
+                    labels = month.abb))) + 
+  geom_bar() + 
+  scale_x_discrete(drop = FALSE) +
+  labs(
+    title = "My Plot",
+    x = "Month"
+  )
 #Tidy up the code
 
 ```
@@ -228,7 +238,15 @@ Exercise: build your own scatterplots of PeterPaul.chem.nutrients
 # Plot surface temperatures by day of  year. 
 # Color your points by year, and facet by lake in two rows.
 # Change the ylab name
-
+ggplot( 
+       subset(PeterPaul.chem.nutrients, lakename == "Paul Lake" | lakename == "Peter Lake"),
+       aes(x = daynum, y = temperature_C),
+       color = year4) +
+  geom_point() +
+  
+  
+  
+  
 
 #2. 
 # Plot temperature by date. Color your points by depth.
