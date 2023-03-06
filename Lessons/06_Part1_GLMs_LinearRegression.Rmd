@@ -38,7 +38,7 @@ If multiple explanatory variables are chosen, they may be analyzed with respect 
 The GLM is based on the assumption that the data residuals approximate a normal distribution (or a linearly transformed normal distribution). We will discuss the non-parametric analogues to several of these tests if the assumptions of normality are violated. For tests that analyze categorical explanatory variables, the assumption is that the variance in the response variable is equal among groups. Note: environmental data often violate the assumptions of normality and equal variance, and we will often proceed with a GLM even if these assumptions are violated. In this situation, justifying the decision to proceed with a linear model must be made.
 
 ## Set up
-```{r, message = FALSE}
+```{r message=FALSE}
 library(tidyverse)
 options(scipen = 4)
 library(here)
