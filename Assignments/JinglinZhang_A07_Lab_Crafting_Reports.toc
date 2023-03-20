@@ -1,0 +1,8 @@
+\contentsline {subsection}{Objectives:}{1}{section*.2}%
+\contentsline {subsection}{Directions}{1}{section*.3}%
+\contentsline {subsection}{Task 1 - Basic Markdown}{1}{section*.4}%
+\contentsline {subsection}{Task 2 - Import packages and data, suppressing messages}{2}{section*.5}%
+\contentsline {subsection}{Task 3: Creating tables}{2}{section*.6}%
+\contentsline {subsection}{Task 3: Plots}{4}{section*.7}%
+\contentsline {subsection}{Task 4: Knit and submit.}{5}{section*.8}%
+\contentsline {subsubsection}{Git Repository}{5}{section*.9}%
