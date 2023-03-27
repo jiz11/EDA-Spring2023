@@ -26,7 +26,7 @@ This exercise accompanies the lessons in Environmental Data Analytics on general
 * Load the tidyverse, lubridate, zoo, and trend packages
 * Set your ggplot theme
 
-```{r warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 #1
 getwd()
 
@@ -46,7 +46,9 @@ theme_set(mytheme)
 
 ```{r, message = FALSE}
 #2
-#the warning "Error in file(file, "rt") : cannot open the connection" shows when setting list.file("~/EDA-Spring2023/Data/Raw/Ozone_TimeSeries/", pattern = "*.csv")), so setwd for the list then set back.
+#the warning "Error in file(file, "rt") : cannot open the connection" shows 
+#when setting list.file("~/EDA-Spring2023/Data/Raw/Ozone_TimeSeries/", pattern 
+#= "*.csv")), so setwd for the list then set back.
 
 setwd("C:/Users/wwwla/Documents/EDA-Spring2023/Data/Raw/Ozone_TimeSeries/")
 file_list <- list.files(pattern = "*.csv")
@@ -77,7 +79,9 @@ GaringerOzone$Date <- as.Date(GaringerOzone$Date, format = "%m/%d/%Y")
 GaringerOzone.processed <- GaringerOzone %>% 
   select(Date, Daily.Max.8.hour.Ozone.Concentration, DAILY_AQI_VALUE)
 #5
-Days <- as.data.frame(seq(as.Date("2010-01-01"), as.Date("2019-12-31"), by = "day"))
+Days <- as.data.frame(seq(as.Date("2010-01-01"), 
+                          as.Date("2019-12-31"), 
+                          by = "day"))
 colnames(Days)[1] <- "Date"
 #6
 GaringerOzone <- left_join(Days, GaringerOzone.processed, by = "Date")
@@ -150,7 +154,8 @@ GaringerOzone.monthly.ts <- ts(GaringerOzone.monthly$mean.ozone,
 GaringerOzone.daily.decomp <- stl(GaringerOzone.daily.ts,s.window = "periodic")
 plot(GaringerOzone.daily.decomp)
 
-GaringerOzone.monthly.decomp <- stl(GaringerOzone.monthly.ts,s.window = "periodic")
+GaringerOzone.monthly.decomp <- stl(GaringerOzone.monthly.ts,
+                                    s.window = "periodic")
 plot(GaringerOzone.monthly.decomp)
 ```
 
