@@ -123,8 +123,8 @@ The `stl` function decomposes the time series object into its component parts. W
 # Exercise 8: Use the stl() function to decompose both series. 
 # Visualize the decomposed series using plot(). What components can you identify?
 
-
-
+BR_Rain_decomp <- stl(BR_Rain_ts, window="periodic")
+plot()
 
 
 
